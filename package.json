@@ -1,7 +1,12 @@
 {
-  "name": "flame",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@filipe.cancio/flame",
+  "version": "0.0.1",
+  "private": false,
+  "main": "dist/index.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -20,7 +25,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clean": "rimraf dist",
+    "compile": "npm run clean && cross-env NODE_ENV=production babel src/components --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
   },
   "eslintConfig": {
     "extends": [
